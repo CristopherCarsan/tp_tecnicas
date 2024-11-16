@@ -7,6 +7,7 @@ namespace Practica_35363369_Cardozo_Sanchez_Cristopher_parte_1
 {
     internal class Program
     {
+
         static void parte1_ejercicio1(int numero)
         {
             for (int i = 0; i < numero; i++)
@@ -93,29 +94,68 @@ namespace Practica_35363369_Cardozo_Sanchez_Cristopher_parte_1
                 }
             }
         }
-
+        
         static void parte1_ejercicio7(int numero_doble )
-        {
-            numero_doble.GetType().ToString();
-                
-
+        {   
             Console.WriteLine($"\nEl doble es: {numero_doble*2}");
         }
+        
 
-        static void parte1_ejercicio8(int numero_doble)
+        static void parte1_ejercicio8(double altura, double radio)
         {
+            //area 2xpixradiox(altura+radio)
+            //volumen pixradio^2xaltura
+           
+            string letra ="";
+            string continuar = "";
+            do
+            { do
+                {
+                Console.WriteLine($"\nque desea calcular: Area(A) o Volumen(V)");
+                letra =Console.ReadLine();
+                letra = letra.ToUpper();
+                }while (letra!= "V" && letra!="A");
+                if (letra=="A")
+                {
+                    double area = 0;
+                    area = 2*Math.PI * radio * (altura + radio);
+                    Console.WriteLine($"\nEl Area es: {area}");
+                }
+                else
+                {
+                    double volumen = 0;
+                    volumen = Math.PI*(radio*radio)*altura;
+                    Console.WriteLine($"\nEl Volumen es: {volumen}");
+                }
+
+                do
+                {
+                    Console.WriteLine($"\nque desea calcular nuevamente el Area o Volumen (S/N)");
+                    continuar = Console.ReadLine();
+                    continuar = continuar.ToUpper();
+                }
+                while (continuar!= "S" && continuar!= "N");
+            }while (continuar=="S");
 
 
         }
 
+        static void parte1_ejercicio9(double altura, double radio)
+        {
+            double[] vector_double = new double[2];
+            vector_double[0] = 2 * Math.PI * radio * (altura + radio);
+            vector_double[1] = Math.PI * (radio * radio) * altura;
+
+            Console.WriteLine($"\nEl Area es: {vector_double[0]}");
+            Console.WriteLine($"\nEl Volumen es: {vector_double[1]}");
+
+        }
 
 
 
 
         static void Main(string[] args)
-        {
-            /*
-            int numero = 0;
+        {   int numero = 0;
             int numero1= 0;
             int numero2= 0;
             int numero3= 0;
@@ -157,18 +197,23 @@ namespace Practica_35363369_Cardozo_Sanchez_Cristopher_parte_1
             Console.WriteLine("ingrese el segundo numero entero");
             numero_entero2 = int.Parse(Console.ReadLine());
             parte1_ejercicio6(numero_entero1, numero_entero2);
+           
             
-            int numero_doble= 0;
             Console.WriteLine("ingrese un numero para calcular el doble: ");
-            numero_doble = int.Parse(Console.ReadLine());
-            parte1_ejercicio7(numero_doble);
-            */
+            int numero_doble = int.Parse(Console.ReadLine());
+            parte1_ejercicio7(numero_doble);           
+         
+            double altura = 0.0f;    
+            Console.WriteLine("\nIngrese la altura del cilindro: ");
+            altura= double.Parse(Console.ReadLine());
+            double radio = 0.0f;
+            Console.WriteLine("\nIngrese el radio de la base del cilindro: ");
+            radio = double.Parse(Console.ReadLine());
+            parte1_ejercicio8(altura, radio);
+            parte1_ejercicio9(altura,radio);
+            
 
-
-
-
-
-
+        
 
 
 
