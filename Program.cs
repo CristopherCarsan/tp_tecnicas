@@ -102,7 +102,11 @@ namespace Practica_35363369_Cardozo_Sanchez_Cristopher_parte_1
             Console.WriteLine($"\nEl doble es: {numero_doble*2}");
         }
 
+        static void parte1_ejercicio8(int numero_doble)
+        {
 
+
+        }
 
 
 
